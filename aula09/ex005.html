@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, red, blue);
+            /* background-color: rgba(0, 0, 255, 0.705); */
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resutado</p>
+    <p>Aprendendo usar o <strong>DOM</strong> em javacript</p>
+    <h2 class="segundo">Segundo titulo</h2>
+    <div id="cor">Clique em mim </div><br>
+    <div name="msg">Amigo eu estou aqui</div><br>
+    <aside class="lorem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </aside>
+
+    <script>
+        let p1 = document.getElementsByTagName('p')[0]
+        let p2 = document.getElementsByTagName('p')[1]
+        let d = document.getElementById('cor')
+        let msg = document.getElementsByName('msg')[0]
+        let segundo = document.getElementsByClassName('segundo')[0]
+        document.write('Esta excrito assim: ' + p1.innerHTML)
+        let lorem = document.querySelector('aside.lorem')
+        lorem.style.color = 'purple'
+        lorem.style.background = 'yellow'
+        segundo.style.background = 'rgb(148, 1, 148)'
+        msg.style.background = 'white'
+        msg.style.color = 'red'
+        d.innerText = 'Estou esperando...'
+        p1.style.color = 'black'
+        p2.style.color = 'green'
+        d.style.background = 'green'
+
+
+    </script>
+</body>
+
+</html>

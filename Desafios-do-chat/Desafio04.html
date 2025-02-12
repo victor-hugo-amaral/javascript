@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio chat</title>
+</head>
+
+<body>
+    <h1>Desafio Ímpar ou Par</h1>
+    <p>Digite um numero: <input type="number" id="numero"></p>
+    <button onclick="resolver()">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function resolver() {
+            let numero = document.getElementById('numero').value.trim()
+            let res = document.getElementById('res')
+            if (numero === "") {
+                res.innerHTML = '<p>Por favor <strong>digite um numero</strong></p>'
+                return
+            }
+
+            numero = Number(numero)
+
+            if (numero % 2 === 0) { // É uma verifivcação extra isNaN
+                res.innerHTML = '<p>O numero é <strong>PAR</strong></p>'
+            } else {
+                res.innerHTML = '<p>O numero é <strong>Ímpar</strong></p>'
+            }
+        }
+    </script>
+</body>
+
+</html>

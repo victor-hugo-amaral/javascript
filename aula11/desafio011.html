@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 011</title>
+</head>
+
+<body>
+    <h1>Qual nacionalidade você?</h1>
+    <p>Digite o seu pais <input type="text" id="txtpais"></p>
+    <button onclick="verificar()">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            let txtpais = document.getElementById('txtpais')
+            let res = document.getElementById('res')
+            let pais = (txtpais.value)
+            if (pais == 'brasil') {
+                res.innerHTML = '<p>Você  é <strong>brasileiro</strong></p>'
+
+            } else {
+                res.innerHTML = '<p>Você é <strong>estrangeiro</strong></p>'
+            }
+        }
+    </script>
+</body>
+
+</html>
