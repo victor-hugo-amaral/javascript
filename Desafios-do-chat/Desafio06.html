@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do chat</title>
+</head>
+
+<body>
+    <h1>Verificar qual estação do Ano</h1>
+    <p>Digite um numero de 1 a 12: <input type="number" id="numero"></p>
+    <button id="botao">Vericar</button>
+    <div id="res"></div>
+
+    <script>
+        document.getElementById('botao').addEventListener("click", verificar)
+        function verificar() {
+            let numero = Number(document.getElementById('numero').value)
+            let res = document.getElementById('res')
+            let estacao
+            switch (numero) {
+                case 1:
+                    estacao = "O mes é Janeiro e a estação do ano é Verão"
+                    break
+                case 2:
+                    estacao = "O mes é Janeiro e a estação do ano é Verão"
+                    break
+                case 3:
+                    estacao = 'O mes é Março e a estação do ano é Outono'
+                    break
+                case 4:
+                    estacao = 'O mes é Abril e a estação do ano é Outono'
+                    break
+                case 5:
+                    estacao = 'O mes é Maio e a estação do ano é Outono'
+                    break
+                case 6:
+                    estacao = 'O mes é Junho e a estação do ano é Inverno'
+                    break
+                case 7:
+                    estacao = 'O mes é Julho e a estação do ano é Inverno'
+                    break
+                case 8:
+                    estacao = 'O mes é Agosto e a estação do ano é Inverno'
+                    break
+                case 9:
+                    estacao = 'O mes é Setembro e a estação do ano é Primavera'
+                    break
+                case 10:
+                    estacao = 'O mes é Outubro e a estação do ano é Primavera'
+                    break
+                case 11:
+                    estacao = 'O mes é Novembro e a estação do ano é Primavera'
+                    break
+                case 12:
+                    estacao = 'O mes é Dezembro e a estação do ano é Verao'
+                    break
+                default:
+                    estacao = 'O numero é Invalido! Digite um numero de 1 a 12. '
+                    break
+            }
+            res.innerHTML = `<p><strong>${estacao}</strong></p>`
+        }
+    </script>
+</body>
+
+</html>
