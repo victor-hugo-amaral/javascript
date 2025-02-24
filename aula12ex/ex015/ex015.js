@@ -29,13 +29,13 @@ function resultado() {
             }
         } else if (fsex[1].checked) {
             genero = 'Mulher'
+        } else if (idade < 50) {
             if (idade >= 0 && idade <= 13) {
                 //Criança
                 img.setAttribute('src', 'img/menina.png')
             } else if (idade <= 21) {
                 //Joven
-                img.setAttribute('src', 'img/jovenm.png')
-            } else if (idade < 50) {
+                img.setAttribute('src', 'img/meninam.png')
                 //adulto
                 img.setAttribute('src', 'img/mulher.png')
             } else {
