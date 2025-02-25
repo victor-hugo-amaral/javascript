@@ -1,0 +1,93 @@
+<!-- Correção do HTML (adicionei IDs nos radios e ajustei labels) -->
+<div>
+    <p>Digite o ano do seu nascimento: <input type="number" id="ano"></p>
+    
+    <input type="radio" name="aventura" id="floresta">
+    <label for="floresta">Floresta</label>
+    
+    <input type="radio" name="aventura" id="montanha">
+    <label for="montanha">Montanha</label>
+    
+    <input type="radio" name="aventura" id="cidade">
+    <label for="cidade">Cidade</label><br>
+    
+    <button id="resultado">Resultado</button>
+</div>
+<div id="res"></div>
+
+<script>
+const botao = document.getElementById('resultado')
+botao.addEventListener('click', gerarPerfil)
+
+function gerarPerfil() {
+    const anoInput = document.getElementById('ano')
+    const res = document.getElementById('res')
+    const data = new Date()
+    const anoAtual = data.getFullYear()
+
+    // Validação
+    if(!anoInput.value || anoInput.value > anoAtual) {
+        alert('Ano inválido!')
+        return
+    }
+
+    const idade = anoAtual - Number(anoInput.value)
+    const aventura = document.querySelector('input[name="aventura"]:checked')
+
+    if(!aventura) {
+        alert('Selecione um tipo de aventura!')
+        return
+    }
+
+    // Determinar categoria
+    let categoria
+    if(idade <= 12) categoria = 'Novato'
+    else if(idade <= 20) categoria = 'Aspirante'
+    else if(idade <= 35) categoria = 'Experiente'
+    else if(idade <= 50) categoria = 'Veterano'
+    else categoria = 'Lenda'
+
+    // Mapeamento de dados
+    const config = {
+        floresta: {
+            Novato: { equipamento: 'Kit de sobrevivência básico', dica: 'Leve repelente e água potável' },
+            Aspirante: { equipamento: 'Facão e bússola', dica: 'Aprenda a ler trilhas naturais' },
+            Experiente: { equipamento: 'Kit profissional', dica: 'Monte acampamento antes do anoitecer' },
+            Veterano: { equipamento: 'GPS satelital', dica: 'Verifique a previsão do tempo' },
+            Lenda: { equipamento: 'Equipamento de última geração', dica: 'Ensine suas técnicas aos novatos' }
+        },
+        montanha: {
+            Novato: { equipamento: 'Calçados antiderrapantes', dica: 'Comece com trilhas leves' },
+            Aspirante: { equipamento: 'Bastões de caminhada', dica: 'Treine sua resistência' },
+            Experiente: { equipamento: 'Equipamento de escalada', dica: 'Verifique as fixações' },
+            Veterano: { equipamento: 'Pico profissional', dica: 'Cheque as condições do gelo' },
+            Lenda: { equipamento: 'Kit completo de alpinismo', dica: 'Conheça seus limites físicos' }
+        },
+        cidade: {
+            Novato: { equipamento: 'Mapa urbano', dica: 'Estude o trajeto antes de sair' },
+            Aspirante: { equipamento: 'App de navegação', dica: 'Carregue um power bank' },
+            Experiente: { equipamento: 'Kit urbano', dica: 'Conheça rotas alternativas' },
+            Veterano: { equipamento: 'Smartwatch com GPS', dica: 'Monitore seu ritmo' },
+            Lenda: { equipamento: 'Equipamento tático', dica: 'Compartilhe seu conhecimento' }
+        }
+    }
+
+    // Obter dados específicos
+    const tipoAventura = aventura.id
+    const dados = config[tipoAventura][categoria]
+
+    // Criar elementos
+    const img = document.createElement('img')
+    img.setAttribute('src', `img/${tipoAventura}-${categoria.toLowerCase()}.png`)
+    img.style.width = '100px'
+
+    // Montar resultado
+    res.innerHTML = `
+        <h2>Perfil: ${categoria} da ${tipoAventura.charAt(0).toUpperCase() + tipoAventura.slice(1)}</h2>
+        <p>Idade: ${idade} anos</p>
+        <p>Equipamento essencial: ${dados.equipamento}</p>
+        <p>Dica profissional: ${dados.dica}</p>
+    `
+    res.appendChild(img)
+}
+</script>
