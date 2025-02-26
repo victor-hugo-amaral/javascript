@@ -21,6 +21,10 @@ label {
     padding: 5px;
 }
 
+#datadenacimento {
+    height: auto;
+}
+
 button {
     margin: 15px;
 }
