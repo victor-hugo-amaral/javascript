@@ -12,7 +12,7 @@ function resultado() {
         let idade = ano - Number(fano.value)
         let genero = ''
         let img = document.createElement('img') //Cria o img
-        img.setAttribute('id', 'foto') // Cria um id e coloca o nome do id
+        img.setAttribute('id', 'foto') // Cria um id e coloca o nome foto no id
         if (fsex[0].checked) {
             genero = 'Homem'
             if (idade >= 0 && idade <= 13) {
