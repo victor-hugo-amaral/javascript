@@ -5,9 +5,10 @@ function resultado() {
     let ano = data.getFullYear()
     let fano = document.getElementById('txtano')
     let res = document.getElementById('res')
-    if (fano.value.length == 0 || Number(fano.value) > ano) {
+    if (fano.value.trim() == 0 || Number(fano.value) > ano) {
         alert('[ERRO!]Verifique os dados e tente novamente!')
-    } else {
+    }
+    else {
         let fsex = document.getElementsByName('radsex')
         let idade = ano - Number(fano.value)
         let genero = ''
@@ -29,14 +30,14 @@ function resultado() {
             }
         } else if (fsex[1].checked) {
             genero = 'Mulher'
-        } else if (idade < 50) {
             if (idade >= 0 && idade <= 13) {
                 //Criança
                 img.setAttribute('src', 'img/menina.png')
             } else if (idade <= 21) {
                 //Joven
-                img.setAttribute('src', 'img/meninam.png')
+                img.setAttribute('src', 'img/jovenm.png')
                 //adulto
+            } else if (idade < 50) {
                 img.setAttribute('src', 'img/mulher.png')
             } else {
                 img.setAttribute('src', 'img/velha.png')
