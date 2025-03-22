@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio chat</title>
+</head>
+
+<body>
+    <h1>O numero é positivo, negativo ou zero?</h1>
+    <p>Digite um numero: <input type="number" id="numero"></p>
+    <button onclick="verificar()">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            let numero = document.getElementById('numero').value
+            let res = document.getElementById('res')
+            if (numero === "") {
+                res.innerText = 'Digite um numero'
+                return
+            }
+            numero = Number(numero)
+            if (numero > 0) {
+                res.innerText = `O ${numero} é positivo`
+            } else if (numero < 0) {
+                res.innerText = `O ${numero} é negativo`
+            } else {
+                res.innerText = `O ${numero} é zero`
+            }
+
+        }
+    </script>
+</body>
+
+</html>
