@@ -22,21 +22,13 @@ div {
     padding: 5px;
 }
 
-#box label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#box input {
-    width: 60px;
-    padding: 5px;
-    margin-left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
 footer {
     color: white;
     text-align: center;
     font-style: italic;
+}
+
+button {
+    width: 60px;
+    margin: 10px;
 }

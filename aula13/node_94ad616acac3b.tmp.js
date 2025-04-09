@@ -6,8 +6,9 @@
 // }
 // console.log('FIM ')
 
-let n = 4
+let n = 1
 let soma
-for (let c = 1; c <= 10; c++) {
-    soma = n * c
+for (let c = n; c >= 1; c++) {
+    soma = c * 1
 }
+console.log(soma)
