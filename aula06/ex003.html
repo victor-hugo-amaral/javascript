@@ -28,12 +28,15 @@
     <h1>Hellor, world!</h1>
     <p>Ja me livrei da mardicao</p>
     <script>
-        let n1 = Number.parseFloat(window.prompt('Digite um nummero ?'))//Number.parseInt = Declara um numero quebrado
-        let n2 = Number.parseFloat(window.prompt('Digite outro numero ?'))//Number.parseFloat = Declara um numero real
+        let n1 = Number(window.prompt('Digite um numero ?'))//Number.parseInt = Declara um numero quebrado
+        let n2 = Number(window.prompt('Digite outro numero ?'))//Number.parseFloat = Declara um numero real
         let soma = n1 + n2
-        //${s} usa tamplates string mais especifimente juntar as coisa
+        window.alert(`A soma dos valores ${n1} e ${n2} e ${soma}`)
+        //${s} usa tamplates string mais especifimente juntar as coisa 
         //(number + number) para adição
         //(string + string) para concatenação
+        //função String(...) serve só para garantir que o valor de soma seja convertido para texto,
+        //para poder ser concatenado (juntado) com outro texto.
     </script>
 </body>
 
