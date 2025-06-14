@@ -8,18 +8,20 @@
     <style>
         button {
             font-size: 30px;
+            margin: 5px;
         }
     </style>
 </head>
 
 <body>
-    <button onclick="alerta(1)">Botão 1°</button>
-    <button onclick="alerta(2)">Botão 2°</button>
-    <button onclick="alerta(3)">Botão 3°</button>
+    <h1>Desafio das Mensagens</h1>
+    <button onclick="alerta (1)">Botao 1</button>
+    <button onclick="alerta (2)">Botao 2</button>
+    <button onclick="alerta (3)">Botao 3</button>
 
     <script>
         function alerta(numero) {
-            alert('Voce apertou botão ' + numero + ' °')
+            window.alert(`Voce clicou no ${numero} botao`)
         }
     </script>
 </body>

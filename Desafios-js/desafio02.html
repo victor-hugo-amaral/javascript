@@ -5,21 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 02</title>
+    <style>
+        button {
+            font-size: 30px;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Boas-vindas</h1>
-    <button id="usuario">Clique aqui</button>
-    <script>
-        let user = document.getElementById('usuario')
-        user.addEventListener("click", clique)
-        function clique() {
-            let nome = window.prompt('Qual é seu nome ?')
-            let idade = window.prompt(`Olá ${nome} !Qual é sua idade ?`)
-            window.alert(`Acebei de conhecer o ${nome}, que tem ${idade} anos de idade!`)
-        }
+    <button id="user">Inicie o Desafio</button>
 
+    <script>
+
+        let usuario = document.getElementById("user")
+        usuario.addEventListener('click', click)
+        function click() {
+            let nome = prompt('Qual e seu nome')
+            let idade = prompt(`Ola, ${nome}! Quantos anos voce tem ?`)
+            alert(`Acabei de conhecer o ${nome}, que tem ${idade} anos de idade! `)
+        }
     </script>
-</body>
 
 </html>
