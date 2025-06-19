@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do chat</title>
+</head>
+
+<body>
+    <h1>Descubra o dia da semana</h1>
+    <p>Digite um numero de 1 a 7: <input type="number" id="numero"></p>
+    <button id="botao">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        let botao = document.getElementById('botao')
+        botao.addEventListener("click", verificar)
+        function verificar() {
+            let numero = Number(document.getElementById('numero').value)
+            let res = document.getElementById('res')
+            let dia
+
+            switch (numero) {
+                case 1:
+                    dia = 'Domingo'
+                    break
+                case 2:
+                    dia = 'Segunda-feira'
+                    break
+                case 3:
+                    dia = 'Terça-feira'
+                    break
+                case 4:
+                    dia = 'Quarta-feira'
+                    break
+                case 5:
+                    dia = 'Quinta-feira'
+                    break
+                case 6:
+                    dia = 'Sexta-feira'
+                    break
+                case 7:
+                    dia = 'Sábado'
+                    break
+                default:
+                    dia = 'O numero digitado esta errado! Por favor digite um numero de 1 a 7.'
+            }
+            res.innerHTML = `<p><strong>${dia}</strong></p>`
+        }
+    </script>
+</body>
+
+</html>

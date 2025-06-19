@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estundando Javascript</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Tem como ultilizar tags de html  em javascript-->
+    <script>
+        let valor = prompt("Digite um número:");
+        let numero = parseFloat(valor); // converte a string do prompt para número
+
+        let formatado = numero.toFixed(2).replace('.', ','); // Forma correta de usar o toFixed
+        alert("Valor formatado: " + formatado);
+
+        // window.alert('Você é um trouxa')
+        // window.confirm('Você é um otario!')
+        // let resposta1 = window.confirm('Você gosta de Javascript?')
+        // let resposta2 = window.prompt('Se nao esta gostando por qual motivo? ')
+        // document.writeln(`${resposta1} <br>`)
+        // document.writeln(`Esse é o motivo que você nao esta gostando de javascript? ${resposta2}`)
+
+        let nome = window.prompt('Qual é seu nome?')//.toLowerCase() posso usar assim tambem
+        document.write(`O seu nome tem um total de <strong>${nome.length}</strong> letras.<br>`)
+        // document.write(`O seu nome em Maiúsculas ${nome.toUpperCase()}<br>`)
+        // document.write(`O seu nome em minusculo ${nome.toLowerCase()}<br>`)
+
+        let student = window.prompt('Digite o nome do estudante?')
+        let nota1 = Number(window.prompt('Digite um numero?'))
+        let nota2 = Number(window.prompt('Digite a  segunda nota?'))
+        let nota3 = Number(window.prompt('Digite a  terceira nota?'))
+        let nota4 = Number(window.prompt('Digite a  quarta nota?'))
+
+        let soma = nota1 + nota2 + nota3 + nota4
+
+        let media = soma / 2
+        document.write(`O <strong>${student}</strong> tirou a media de ${media}`)
+
+
+        //  ! = negaçã 
+        //  && = conjução tem que ser os dois verdadeiros
+        // || = Disjunção: basta um seja verdadeiro
+
+        // var nome = window.prompt('Qual é seu nome ?')
+        // document.write(`Seu nome tem ${nome.length} letras. <br> `)
+        // document.write(`Seu nome em Maiúsculas ${nome.toUpperCase()}<br>`)
+        // document.write(`Seu nome em minusculo ${nome.toLowerCase()}<br>`)
+
+        // var n1 = Number(window.prompt('Digite um numero'))
+        // var n2 = Number(window.prompt('Digite outro numero'))
+
+        // var soma = n1 + n2
+        // document.write(`O valor da some é ${soma.toString()}`) 
+    </script>
+</body>
+
+</html>

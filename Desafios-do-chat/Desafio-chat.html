@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Chat</title>
+</head>
+
+<body>
+    <h1>Verificar qual estação do Ano</h1>
+    <p>Digite um número de 1 a 12: <input type="number" id="numero"></p>
+    <button id="botao">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        document.getElementById('botao').addEventListener("click", verificar);
+
+        function verificar() {
+            let numero = Number(document.getElementById('numero').value);
+            let res = document.getElementById('res');
+            let mes, estacao;
+
+            switch (numero) {
+                case 1:
+                    mes = "Janeiro";
+                    estacao = "Verão";
+                    break;
+                case 2:
+                    mes = "Fevereiro";
+                    estacao = "Verão";
+                    break;
+                case 3:
+                    mes = "Março";
+                    estacao = "Outono";
+                    break;
+                case 4:
+                    mes = "Abril";
+                    estacao = "Outono";
+                    break;
+                case 5:
+                    mes = "Maio";
+                    estacao = "Outono";
+                    break;
+                case 6:
+                    mes = "Junho";
+                    estacao = "Inverno";
+                    break;
+                case 7:
+                    mes = "Julho";
+                    estacao = "Inverno";
+                    break;
+                case 8:
+                    mes = "Agosto";
+                    estacao = "Inverno";
+                    break;
+                case 9:
+                    mes = "Setembro";
+                    estacao = "Primavera";
+                    break;
+                case 10:
+                    mes = "Outubro";
+                    estacao = "Primavera"; // Correção feita aqui
+                    break;
+                case 11:
+                    mes = "Novembro";
+                    estacao = "Primavera"; // Correção feita aqui
+                    break;
+                case 12:
+                    mes = "Dezembro";
+                    estacao = "Verão"; // Correção feita aqui
+                    break;
+                default:
+                    res.innerHTML = `<p><strong>O número é inválido! Digite um número de 1 a 12.</strong></p>`;
+                    return;
+            }
+
+            res.innerHTML = `<p><strong>O mês é ${mes} e a estação do ano é ${estacao}.</strong></p>`;
+        }
+    </script>
+</body>
+
+</html>

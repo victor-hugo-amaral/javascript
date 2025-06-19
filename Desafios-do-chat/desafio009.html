@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Cartas - Blackjack</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1b1b1b;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    input, button {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+    }
+    input {
+      width: 100px;
+      text-align: center;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #output {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contador de Cartas - Blackjack</h1>
+  <div>
+    <input type="text" id="cardInput" placeholder="Ex: A, 10, 5">
+    <button onclick="countCard()">Contar</button>
+    <button onclick="resetCount()">Resetar</button>
+  </div>
+  <div id="output">Contador Corrente: 0</div>
+
+  <script>
+    const cardValues = {
+      '2': 1, '3': 1, '4': 1, '5': 1, '6': 1,
+      '7': 0, '8': 0, '9': 0,
+      '10': -1, 'J': -1, 'Q': -1, 'K': -1, 'A': -1
+    };
+
+    let runningCount = 0;
+
+    function countCard() {
+      const input = document.getElementById('cardInput').value.trim().toUpperCase();
+      const value = cardValues[input];
+
+      if (value !== undefined) {
+        runningCount += value;
+        document.getElementById('output').textContent = `Contador Corrente: ${runningCount}`;
+      } else {
+        alert('Carta inválida. Use 2-10, J, Q, K ou A.');
+      }
+
+      document.getElementById('cardInput').value = '';
+    }
+
+    function resetCount() {
+      runningCount = 0;
+      document.getElementById('output').textContent = `Contador Corrente: ${runningCount}`;
+    }
+  </script>
+</body>
+</html>

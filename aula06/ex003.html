@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro Site</title>
+    <style>
+        body {
+            background-color: rgba(1, 1, 80, 0.562);
+            color: white;
+        }
+
+        h1 {
+            font: italic 30pt Arial;
+            color: rgba(158, 16, 16, 0.781);
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hellor, world!</h1>
+    <p>Ja me livrei da mardicao</p>
+    <script>
+        let n1 = Number(window.prompt('Digite um numero ?'))//Number.parseInt = Declara um numero quebrado
+        let n2 = Number(window.prompt('Digite outro numero ?'))//Number.parseFloat = Declara um numero real
+        let soma = n1 + n2
+        window.alert(`A soma dos valores ${n1} e ${n2} e ${soma}`)
+        //${s} usa tamplates string mais especifimente juntar as coisa 
+        //(number + number) para adição
+        //(string + string) para concatenação
+        //função String(...) serve só para garantir que o valor de soma seja convertido para texto,
+        //para poder ser concatenado (juntado) com outro texto.
+    </script>
+</body>
+
+</html>

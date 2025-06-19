@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Chat</title>
+</head>
+
+<body>
+    <h1>Você pode tirar a carteira de motorista</h1>
+    <p>Digite sua idade: <input type="number" id="idade"></p>
+    <button onclick="verificar()">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            let idade = document.getElementById('idade').value.trim()
+            let res = document.getElementById('res');
+            if (idade === "") {
+                res.innerHTML = '<p>Digite sua idade certa</p>'
+                return
+            }
+            idade = Number(idade)
+            if (idade >= 18) {
+                res.innerHTML = '<p>Você já pode tirar sua <strong>carta</strong></p>'
+            } else {
+                res.innerHTML = 'Você não tem a idade certa ainda para tirar sua <strong>carta</strong>'
+            }
+        }
+    </script>
+</body>
+
+</html>
